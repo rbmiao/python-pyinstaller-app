@@ -14,3 +14,6 @@ and execute at the command line on Linux machines without Python.
 
 The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
+
+
+Reference: Create a Pipeline job to build a Python application with PyInstaller<src="https://www.youtube.com/watch?v=kW_bADC2fFM">
