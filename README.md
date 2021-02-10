@@ -16,4 +16,4 @@ The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
 
 
-Reference: Create a Pipeline job to build a Python application with PyInstaller<link href="https://www.youtube.com/watch?v=kW_bADC2fFM">
+Reference: <a href="https://www.youtube.com/watch?v=kW_bADC2fFM"> Create a Pipeline job to build a Python application with PyInstaller</a> 
