@@ -35,4 +35,20 @@ vagrant up
 * See screenshots in pipeline-steps folder.
 
 
+# Troubleshooting:
+```
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+```
+* It mostly is because docker cannot be run by Jenkins
+```
+sudo usermod -aG docker jenkins
+sudo systemctl restart docker
+```
+* Or change permission of docker.sock
+```
+sudo chmod 666 /var/run/docker.sock
+```
+
+# 
+
 Reference: <a href="https://www.youtube.com/watch?v=kW_bADC2fFM"> Create a Pipeline job to build a Python application with PyInstaller</a> 
