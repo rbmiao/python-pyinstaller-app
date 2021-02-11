@@ -16,4 +16,16 @@ The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
 
 
+
+# All followings are done on Vagrant VM:
+* Create a vagrant VM using Vagrantfile: install java, jenkins, git, wget, python, pip3, pytest, etc. Start services of Jenkins, docker, add usergroup...
+* Login to Jenkins -> manage plugins -> Install docker related plugins -> reboot Jenkins,
+* Build a pipeline project -> SCM: git -> Save4, Build now -> 
+
+
+
+# Output: 
+* See screenshots in pipeline-steps folder.
+
+
 Reference: <a href="https://www.youtube.com/watch?v=kW_bADC2fFM"> Create a Pipeline job to build a Python application with PyInstaller</a> 
