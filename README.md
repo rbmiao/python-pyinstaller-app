@@ -16,6 +16,13 @@ The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
 
 
+# Start a Vagrant VM using Vagrantfile:
+* After cloning this repo, naviage to the directory
+* Boot up using following:
+```
+vagrant up
+```
+* Since :8080 has been mapped to :8888 in Vagrantfile, Jenkins can be accessed: localhost:8888
 
 # All followings are done on Vagrant VM:
 * Create a vagrant VM using Vagrantfile: install java, jenkins, git, wget, python, pip3, pytest, etc. Start services of Jenkins, docker, add usergroup...
