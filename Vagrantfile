@@ -34,12 +34,15 @@ $script = <<ENDSCRIPT
   sudo systemctl enable docker
   sudo systemctl start docker
   
-  sudo usermod -aG docker $(whoami)
+  sudo usermod -aG docker jenkins
+  sudo chmod 666 /var/run/docker.sock
 
   sudo yum install python3-pip -y
   sudo pip3 install -U pytest
 
   sudo yum install -y git
+
+
 ENDSCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|

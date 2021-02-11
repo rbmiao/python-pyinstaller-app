@@ -30,9 +30,10 @@ cat /var/.../administration
 ```
 
 # All followings are done on Vagrant VM:
-* Create a vagrant VM using Vagrantfile: install java, jenkins, git, wget, python, pip3, pytest, etc. Start services of Jenkins, docker, add usergroup...
+* Create a vagrant VM(CentOS 8) using Vagrantfile: install java, jenkins, git, wget, python, pip3, pytest, etc. Start services of Jenkins, docker, add usergroup. (There might be some redundant steps)
 * Login to Jenkins -> manage plugins -> Install docker related plugins -> reboot Jenkins,
-* Build a pipeline project -> SCM: git -> Save4, Build now -> 
+* Build a pipeline project -> SCM: git -> Save
+* Build now ->  
 
 
 
