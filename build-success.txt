@@ -1,0 +1,323 @@
+Started by user Daniel Miao
+Obtained Jenkinsfile from git https://github.com/patebija/simple-python-pyinstaller-app.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Python-Application
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/patebija/simple-python-pyinstaller-app.git # timeout=10
+Fetching upstream changes from https://github.com/patebija/simple-python-pyinstaller-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.27.0'
+ > git fetch --tags --force --progress -- https://github.com/patebija/simple-python-pyinstaller-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision df070ad062c2dd9bb15806b95e881e3d2b194df7 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f df070ad062c2dd9bb15806b95e881e3d2b194df7 # timeout=10
+Commit message: "Fix issues"
+ > git rev-list --no-walk df070ad062c2dd9bb15806b95e881e3d2b194df7 # timeout=10
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ docker inspect -f . python:2-alpine
+
+Error: No such object: python:2-alpine
+[Pipeline] isUnix
+[Pipeline] sh
++ docker pull python:2-alpine
+2-alpine: Pulling from library/python
+aad63a933944: Pulling fs layer
+259d822268fb: Pulling fs layer
+10ba96d218d3: Pulling fs layer
+44ba9f6a4209: Pulling fs layer
+44ba9f6a4209: Waiting
+259d822268fb: Verifying Checksum
+259d822268fb: Download complete
+aad63a933944: Verifying Checksum
+44ba9f6a4209: Verifying Checksum
+44ba9f6a4209: Download complete
+10ba96d218d3: Verifying Checksum
+10ba96d218d3: Download complete
+aad63a933944: Pull complete
+259d822268fb: Pull complete
+10ba96d218d3: Pull complete
+44ba9f6a4209: Pull complete
+Digest: sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561d87cb36b2f5b9ff8a760a
+Status: Downloaded newer image for python:2-alpine
+docker.io/library/python:2-alpine
+[Pipeline] withDockerContainer
+Jenkins does not seem to be running inside a container
+$ docker run -t -d -u 993:987 -w /var/lib/jenkins/workspace/Python-Application -v /var/lib/jenkins/workspace/Python-Application:/var/lib/jenkins/workspace/Python-Application:rw,z -v /var/lib/jenkins/workspace/Python-Application@tmp:/var/lib/jenkins/workspace/Python-Application@tmp:rw,z -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** python:2-alpine cat
+$ docker top 2253c482974a4216ca9f8f078f59af11a0406ea78a43d83f9e33fa4edfc29ba8 -eo pid,comm
+[Pipeline] {
+[Pipeline] sh
++ python -m py_compile sources/add2vals.py sources/calc.py
+[Pipeline] stash
+Stashed 5 file(s)
+[Pipeline] }
+$ docker stop --time=1 2253c482974a4216ca9f8f078f59af11a0406ea78a43d83f9e33fa4edfc29ba8
+$ docker rm -f 2253c482974a4216ca9f8f078f59af11a0406ea78a43d83f9e33fa4edfc29ba8
+[Pipeline] // withDockerContainer
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Python-Application
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/patebija/simple-python-pyinstaller-app.git # timeout=10
+Fetching upstream changes from https://github.com/patebija/simple-python-pyinstaller-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.27.0'
+ > git fetch --tags --force --progress -- https://github.com/patebija/simple-python-pyinstaller-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision df070ad062c2dd9bb15806b95e881e3d2b194df7 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f df070ad062c2dd9bb15806b95e881e3d2b194df7 # timeout=10
+Commit message: "Fix issues"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ docker inspect -f . qnib/pytest
+
+Error: No such object: qnib/pytest
+[Pipeline] isUnix
+[Pipeline] sh
++ docker pull qnib/pytest
+Using default tag: latest
+latest: Pulling from qnib/pytest
+f2b6b4884fc8: Pulling fs layer
+4fb899b4df21: Pulling fs layer
+74eaa8be7221: Pulling fs layer
+2d6e98fe4040: Pulling fs layer
+414666f7554d: Pulling fs layer
+bb0bcc8d7f6a: Pulling fs layer
+48c658404050: Pulling fs layer
+017da2081734: Pulling fs layer
+db789acdfe25: Pulling fs layer
+6f32167f8494: Pulling fs layer
+2d6e98fe4040: Waiting
+414666f7554d: Waiting
+bb0bcc8d7f6a: Waiting
+48c658404050: Waiting
+017da2081734: Waiting
+db789acdfe25: Waiting
+6f32167f8494: Waiting
+4fb899b4df21: Verifying Checksum
+4fb899b4df21: Download complete
+74eaa8be7221: Verifying Checksum
+74eaa8be7221: Download complete
+414666f7554d: Verifying Checksum
+414666f7554d: Download complete
+f2b6b4884fc8: Verifying Checksum
+f2b6b4884fc8: Download complete
+48c658404050: Verifying Checksum
+48c658404050: Download complete
+bb0bcc8d7f6a: Verifying Checksum
+bb0bcc8d7f6a: Download complete
+017da2081734: Verifying Checksum
+017da2081734: Download complete
+6f32167f8494: Verifying Checksum
+6f32167f8494: Download complete
+db789acdfe25: Verifying Checksum
+db789acdfe25: Download complete
+2d6e98fe4040: Verifying Checksum
+2d6e98fe4040: Download complete
+f2b6b4884fc8: Pull complete
+4fb899b4df21: Pull complete
+74eaa8be7221: Pull complete
+2d6e98fe4040: Pull complete
+414666f7554d: Pull complete
+bb0bcc8d7f6a: Pull complete
+48c658404050: Pull complete
+017da2081734: Pull complete
+db789acdfe25: Pull complete
+6f32167f8494: Pull complete
+Digest: sha256:02a659c938f1d1a89dbdcc2593dde1f9ffeb3ee5edc4379e93c6d84b77ad5ad6
+Status: Downloaded newer image for qnib/pytest:latest
+docker.io/qnib/pytest:latest
+[Pipeline] withDockerContainer
+Jenkins does not seem to be running inside a container
+$ docker run -t -d -u 993:987 -w /var/lib/jenkins/workspace/Python-Application -v /var/lib/jenkins/workspace/Python-Application:/var/lib/jenkins/workspace/Python-Application:rw,z -v /var/lib/jenkins/workspace/Python-Application@tmp:/var/lib/jenkins/workspace/Python-Application@tmp:rw,z -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** qnib/pytest cat
+$ docker top 161a7815cbaf7274a9eec67e582f7d5003b8a87df69a1daa7c033945569c8c33 -eo pid,comm
+[Pipeline] {
+[Pipeline] sh
++ py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.14, pytest-3.5.0, py-1.5.3, pluggy-0.6.0 -- /usr/local/bin/python
+cachedir: .pytest_cache
+rootdir: /var/lib/jenkins/workspace/Python-Application, inifile:
+plugins: cov-2.5.1
+collecting ... collected 5 items
+
+sources/test_calc.py::TestCalc::test_add_floats PASSED                   [ 20%]
+sources/test_calc.py::TestCalc::test_add_integers PASSED                 [ 40%]
+sources/test_calc.py::TestCalc::test_add_string_and_integer PASSED       [ 60%]
+sources/test_calc.py::TestCalc::test_add_string_and_number PASSED        [ 80%]
+sources/test_calc.py::TestCalc::test_add_strings PASSED                  [100%]
+
+ generated xml file: /var/lib/jenkins/workspace/Python-Application/test-reports/results.xml 
+=========================== 5 passed in 0.04 seconds ===========================
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] }
+$ docker stop --time=1 161a7815cbaf7274a9eec67e582f7d5003b8a87df69a1daa7c033945569c8c33
+$ docker rm -f 161a7815cbaf7274a9eec67e582f7d5003b8a87df69a1daa7c033945569c8c33
+[Pipeline] // withDockerContainer
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deliver)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Python-Application
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/patebija/simple-python-pyinstaller-app.git # timeout=10
+Fetching upstream changes from https://github.com/patebija/simple-python-pyinstaller-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.27.0'
+ > git fetch --tags --force --progress -- https://github.com/patebija/simple-python-pyinstaller-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision df070ad062c2dd9bb15806b95e881e3d2b194df7 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f df070ad062c2dd9bb15806b95e881e3d2b194df7 # timeout=10
+Commit message: "Fix issues"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] dir
+Running in /var/lib/jenkins/workspace/Python-Application/5
+[Pipeline] {
+[Pipeline] unstash
+[Pipeline] sh
+++ pwd
++ docker run --rm -v /var/lib/jenkins/workspace/Python-Application/5/sources:/src cdrx/pyinstaller-linux:python2 'pyinstaller -F add2vals.py'
+Unable to find image 'cdrx/pyinstaller-linux:python2' locally
+python2: Pulling from cdrx/pyinstaller-linux
+d8868e50ac4c: Pulling fs layer
+83251ac64627: Pulling fs layer
+589bba2f1b36: Pulling fs layer
+d62ecaceda39: Pulling fs layer
+6d93b41cfc6b: Pulling fs layer
+d875da950782: Pulling fs layer
+8cc3b06c6cc9: Pulling fs layer
+d62ecaceda39: Waiting
+6d93b41cfc6b: Waiting
+d875da950782: Waiting
+8cc3b06c6cc9: Waiting
+589bba2f1b36: Verifying Checksum
+589bba2f1b36: Download complete
+83251ac64627: Verifying Checksum
+83251ac64627: Download complete
+6d93b41cfc6b: Verifying Checksum
+6d93b41cfc6b: Download complete
+d62ecaceda39: Verifying Checksum
+d62ecaceda39: Download complete
+d875da950782: Verifying Checksum
+d875da950782: Download complete
+d8868e50ac4c: Verifying Checksum
+d8868e50ac4c: Download complete
+8cc3b06c6cc9: Verifying Checksum
+8cc3b06c6cc9: Download complete
+d8868e50ac4c: Pull complete
+83251ac64627: Pull complete
+589bba2f1b36: Pull complete
+d62ecaceda39: Pull complete
+6d93b41cfc6b: Pull complete
+d875da950782: Pull complete
+8cc3b06c6cc9: Pull complete
+Digest: sha256:38d970a1c76d3b4827f14b50e6c3e12f4a994b5f2b8784ee12d6c1f98680bc9e
+Status: Downloaded newer image for cdrx/pyinstaller-linux:python2
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+pyinstaller -F add2vals.py
+148 INFO: PyInstaller: 3.6
+149 INFO: Python: 2.7.17
+152 INFO: Platform: Linux-4.18.0-240.1.1.el8_3.x86_64-x86_64-with-debian-wheezy-sid
+155 INFO: wrote /src/add2vals.spec
+298 INFO: UPX is available.
+300 INFO: Extending PYTHONPATH with paths
+['/src', '/src']
+300 INFO: checking Analysis
+300 INFO: Building Analysis because Analysis-00.toc is non existent
+300 INFO: Initializing module dependency graph...
+305 INFO: Caching module graph hooks...
+335 INFO: Caching module dependency graph...
+352 INFO: running Analysis Analysis-00.toc
+449 INFO: Analyzing /src/add2vals.py
+527 INFO: Processing module hooks...
+528 INFO: Loading module hook "hook-encodings.py"...
+3575 INFO: Looking for ctypes DLLs
+3575 INFO: Analyzing run-time hooks ...
+3580 INFO: Looking for dynamic libraries
+4315 INFO: Looking for eggs
+4316 INFO: Using Python library /root/.pyenv/versions/2.7.17/lib/libpython2.7.so.1.0
+4319 INFO: Warnings written to /src/build/add2vals/warn-add2vals.txt
+4339 INFO: Graph cross-reference written to /src/build/add2vals/xref-add2vals.html
+4395 INFO: checking PYZ
+4395 INFO: Building PYZ because PYZ-00.toc is non existent
+4395 INFO: Building PYZ (ZlibArchive) /src/build/add2vals/PYZ-00.pyz
+4622 INFO: Building PYZ (ZlibArchive) /src/build/add2vals/PYZ-00.pyz completed successfully.
+4688 INFO: checking PKG
+4688 INFO: Building PKG because PKG-00.toc is non existent
+4688 INFO: Building PKG (CArchive) PKG-00.pkg
+12965 INFO: Building PKG (CArchive) PKG-00.pkg completed successfully.
+12978 INFO: Bootloader /root/.pyenv/versions/2.7.17/lib/python2.7/site-packages/PyInstaller/bootloader/Linux-64bit/run
+12978 INFO: checking EXE
+12978 INFO: Building EXE because EXE-00.toc is non existent
+12978 INFO: Building EXE from EXE-00.toc
+12979 INFO: Appending archive to ELF section in EXE /src/dist/add2vals
+13054 INFO: Building EXE from EXE-00.toc completed successfully.
+[Pipeline] }
+[Pipeline] // dir
+Post stage
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] sh
+++ pwd
++ docker run --rm -v /var/lib/jenkins/workspace/Python-Application/sources:/src cdrx/pyinstaller-linux:python2 'rm -rf build dist'
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+rm -rf build dist
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] End of Pipeline
+Finished: SUCCESS
