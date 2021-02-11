@@ -26,7 +26,7 @@ vagrant up
 * Password to Jenkins: 
 ```
 vagrant ssh
-cat /var/.../administration
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 # All followings are done on Vagrant VM:
