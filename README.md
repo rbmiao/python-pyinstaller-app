@@ -22,7 +22,12 @@ you'll be creating yourself during the tutorial.
 ```
 vagrant up
 ```
-* Since :8080 has been mapped to :8888 in Vagrantfile, Jenkins can be accessed: localhost:8888
+* Since :8080 has been mapped to :8888 in Vagrantfile, Jenkins can be accessed: localhost:8888. 
+* Password to Jenkins: 
+```
+vagrant ssh
+cat /var/.../administration
+```
 
 # All followings are done on Vagrant VM:
 * Create a vagrant VM using Vagrantfile: install java, jenkins, git, wget, python, pip3, pytest, etc. Start services of Jenkins, docker, add usergroup...
